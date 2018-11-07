@@ -6,7 +6,7 @@ const goalSchema = new Schema({
   password: String,
   habit: String,
   dayCounter: Number,
-  dailyStatus: Number,
+  startDay: Number,
   habitStatus: String,
   rollingDay: Number
 });
@@ -14,3 +14,11 @@ const goalSchema = new Schema({
 const Goal = mongoose.model("Goal", goalSchema);
 
 module.exports = Goal;
+
+/*     username: "carter",
+    password: "password",
+    habit: "test habit",
+    dayCounter: 4,
+    startDay: 180,
+    habitStatus: "active",
+    rollingDay: 184 */

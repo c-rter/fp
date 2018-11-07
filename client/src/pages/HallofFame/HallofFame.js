@@ -85,9 +85,7 @@ class HallofFame extends Component {
                       <td>
                        Day Streak: {goal.dayCounter}
                       </td>
-                      <td>
-                       Today's Status: {goal.dailyStatus}
-                      </td>
+
                     <DeleteBtn onClick={() => this.deleteGoal(goal._id)} />
                   </ListItem></tr>
                 ))}

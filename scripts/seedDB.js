@@ -20,119 +20,29 @@ const goalSeed = [
   {
     username: "carter",
     password: "password",
-    habit: "rolling day 5 - make fail",
-    dayCounter: 15,
-    dailyStatus: 0,
-    habitStatus: "active",
-    rollingDay: 5
-  },
-  {
-    username: "carter",
-    password: "password",
-    habit: "rolling day 6 - increment to 7 if clicked",
-    dayCounter: 11,
-    dailyStatus: 0,
-    habitStatus: "active",
-    rollingDay: 6
-  },
-  {
-    username: "carter",
-    password: "password",
-    habit: "rolling day 7 - do nothing",
-    dayCounter: 9,
-    dailyStatus: 0,
-    habitStatus: "active",
-    rollingDay: 7
-  },
-  {
-    username: "carter",
-    password: "password",
-    habit: "run at the track",
+    habit: "test habit",
     dayCounter: 4,
-    dailyStatus: 0,
-    habitStatus: "fail",
-    rollingDay: 8
-  },
-  {
-    username: "raj",
-    password: "password",
-    habit: "Practice archery",
-    dayCounter: 22,
-    dailyStatus: 0,
-    habitStatus: "achieve",
-    rollingDay: 5
-  },
-  {
-    username: "raj",
-    password: "password",
-    habit: "Learn a new word",
-    dayCounter: 8,
-    dailyStatus: 0,
+    startDay: 180,
     habitStatus: "active",
-    rollingDay: 5
+    rollingDay: 184
   },
   {
-    username: "raj",
+    username: "carter",
     password: "password",
-    habit: "Cook dinner",
-    dayCounter: 15,
-    dailyStatus: 0,
-    habitStatus: "fail",
-    rollingDay: 5
-  },
-  {
-    username: "abbas",
-    password: "password",
-    habit: "Practice boxing",
-    dayCounter: 6,
-    dailyStatus: 0,
-    habitStatus: "fail",
-    rollingDay: 5
-  },
-  {
-    username: "abbas",
-    password: "password",
-    habit: "wake up early",
-    dayCounter: 10,
-    dailyStatus: 1,
+    habit: "test habit",
+    dayCounter: 9,
+    startDay: 175,
     habitStatus: "active",
-    rollingDay: 5
-  },
-  {
-    username: "abbas",
-    password: "password",
-    habit: "learn guitar",
-    dayCounter: 2,
-    dailyStatus: 1,
-    habitStatus: "active",
-    rollingDay: 5
-  },
-  {
-    username: "nitin",
-    password: "password",
-    habit: "Write poem everyday",
-    dayCounter: 5,
-    dailyStatus: 0,
-    habitStatus: "fail",
-    rollingDay: 5
-  },
-  {
-    username: "nitin",
-    password: "password",
-    habit: "Practice swimming",
-    dayCounter: 17,
-    dailyStatus: 0,
-    habitStatus: "active",
-    rollingDay: 5
+    rollingDay: 184
   },
   {
     username: "nitin",
     password: "password",
     habit: "Compliment someone daily",
-    dayCounter: 21,
-    dailyStatus: 1,
-    habitStatus: "achieve",
-    rollingDay: 5
+    dayCounter: 18,
+    startDay: 20,
+    habitStatus: "fail",
+    rollingDay: 38
   }
 ];
 

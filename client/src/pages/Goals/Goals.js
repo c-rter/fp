@@ -11,8 +11,11 @@ import CounterBtn from "../../components/CounterBtn";
 
 var userValue = {};
 var passValue = {};
-var currentDay = 7;
-var statusChanger = {dayCounter: currentDay, rollingDay: currentDay};
+var currentDay = 185;
+var startDate = 0;
+var counterDay = 0;
+var currentDayDisplay = 0;
+var statusChanger = {dayCounter: counterDay, rollingDay: currentDay};
 var habitStatusChanger = {habitStatus: "fail"}
 
 //{_id: new ObjectId(stringId)
@@ -24,11 +27,11 @@ class Goals extends Component {
   };
 
   componentDidMount() {
-//    this.examplePutFunction(stringID, testChanger);
-    userValue = this.props.location.userValue;
-    passValue = this.props.location.passValue;
+  //  this.examplePutFunction(stringID, testChanger);
   //  alert("Welcome, " + userValue + "!");
   //  alert("Your password is " + passValue + "!");
+    userValue = this.props.location.userValue;
+    passValue = this.props.location.passValue;
     this.loadGoals();
   }
 
@@ -55,7 +58,7 @@ class Goals extends Component {
                   }
                 else
                   {
-                    this.changeTheStatus(goalSelection.data[i]._id, habitStatusChanger)
+                    this.statusFailure(goalSelection.data[i]._id, habitStatusChanger)
                   }
               }
           }
@@ -67,10 +70,19 @@ class Goals extends Component {
   };
 
   changeTheStatus = (id, changingObject) => {
-    API.updateGoal(id, changingObject)
-      .then()
-      .catch(err => console.log(err));
-      this.loadGoals();
+
+      API.getGoal(id)
+        .then(res => { 
+        startDate = res.data.startDay;
+        currentDayDisplay = currentDay - startDate;
+        statusChanger = {dayCounter: currentDayDisplay, rollingDay: currentDay};
+        API.updateGoal(id, statusChanger)
+        .then()
+        .catch(err => console.log(err));
+        this.loadGoals();
+         }).catch(err => console.log(err));
+
+
   };
 
   statusFailure = (id, changingObject) => {
@@ -100,8 +112,9 @@ class Goals extends Component {
         password: passValue,
         habit: this.state.habit,
         dayCounter: 0,
-        dailyStatus: 0,
-        habitStatus: "active" 
+        startDay: 0,
+        habitStatus: "active",
+        rollingDay: 0 
       })
         .then(res => this.loadGoals())
         .catch(err => console.log(err));
@@ -152,9 +165,7 @@ class Goals extends Component {
                       <td>
                        Day Streak: {goal.dayCounter}
                       </td>
-                      <td>
-                       Today's Status: {goal.dailyStatus}
-                      </td>
+
                     <DeleteBtn onClick={() => this.deleteGoal(goal._id)} />
                     <CounterBtn onClick={() => this.changeTheStatus(goal._id, statusChanger)} />
                   </ListItem></tr>
